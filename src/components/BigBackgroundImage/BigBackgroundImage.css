@@ -1,0 +1,11 @@
+.main-headers-wrapper{
+  position: absolute;
+  z-index: 1;
+  color: white;
+  align-self: center;
+  width: 100%;
+  display: flex;
+  flex-flow: column;
+  padding: 0 10%;
+  box-sizing: border-box;
+}

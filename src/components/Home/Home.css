@@ -1,0 +1,33 @@
+.description-font{
+  font-family: 'Rubik', sans-serif;
+}
+
+.main-font{
+  font-family: 'Poppins', sans-serif;
+}
+
+.main-header{
+  font-size: 4rem;
+  margin-top: 10px;
+  margin-bottom: 10px; 
+}
+
+.secondary-header{
+  font-size: 1.6rem;
+  max-width: 70%;
+}
+
+*{
+  font-family: 'Poppins', sans-serif;
+}
+
+
+@media all and (max-width:767px) {
+  .main-header{
+    font-size: 2rem;
+  }
+
+  .secondary-header{
+    font-size: 1.2rem;
+  }
+}
