@@ -1,6 +1,7 @@
 import React from "react";
 import { Link } from "gatsby"
 import Cart from "../../icons/Cart";
+import Logo from "../../images/logo.png"
 import "./NavigationBar.css";
 
 function NavigationBar({ children }) {
@@ -33,7 +34,7 @@ function NavigationBar({ children }) {
           }}
         >
           <img
-            src={"/logo.png"}
+            src={Logo}
             alt="coffee beans"
             style={{ objectFit: "cover", width: 50, height: 50, margin: 10 }}
           ></img>
