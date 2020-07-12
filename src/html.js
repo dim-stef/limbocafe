@@ -28,6 +28,7 @@ export default function HTML(props) {
           dangerouslySetInnerHTML={{ __html: props.body }}
         />
         {props.postBodyComponents}
+        <div id="mobile-navigation-root"></div>
       </body>
     </html>
   )

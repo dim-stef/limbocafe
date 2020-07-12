@@ -9,3 +9,9 @@
   padding: 0 10%;
   box-sizing: border-box;
 }
+
+@media all and (max-device-width:767px){
+  .main-headers-wrapper{
+    padding: 0 5%;
+  }
+}

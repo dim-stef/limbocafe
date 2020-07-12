@@ -10,6 +10,7 @@ function BigBackgroundImage({ title, description, image }) {
         height: "60vh",
         position: "relative",
         display: "flex",
+        minHeight: 400,
       }}
     >
       <div className="description-font main-headers-wrapper">
