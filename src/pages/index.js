@@ -2,13 +2,15 @@
 import React from "react"
 import { Link, graphql } from "gatsby"
 import Home from "../components/Home/Home";
-
 import DefaultLayout from "../layouts"
 
 const HomePage = ({ data }) => (
+  <>
   <DefaultLayout>
     <Home data={data}/>
   </DefaultLayout>
+  
+  </>
 )
 
 export default HomePage

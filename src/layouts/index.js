@@ -3,11 +3,14 @@ import { Link } from "gatsby"
 import NavBar from "../components/NavBar"
 import NavigationBar from "../components/NavigationBar/NavigationBar";
 import Logo from "../images/logo.png"
+import { ToastContainer } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 import "./index.css"
 
 const DefaultLayout = ({ children }) => {
   return (
     <>
+      <ToastContainer/>
       <NavigationBar />
       {children}
       <footer style={{width:'100%',display:'flex', justifyContent:'space-evenly', flexFlow:'row wrap',padding:'35px 0',

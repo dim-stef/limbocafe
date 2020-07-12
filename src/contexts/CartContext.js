@@ -130,13 +130,18 @@ function useGoToCheckout() {
 
 function useRemoveLineItems(){
   const { dispatch } = useContext(CartContext)
-  
-  async function removeLineItem(client, checkoutID, lineItemID){
-    const newCheckout = await client.checkout.removeLineItems(checkoutID, [lineItemID])
+
+  const isBrowser = typeof window !== "undefined"
+  const checkoutId = isBrowser
+    ? localStorage.getItem(SHOPIFY_CHECKOUT_STORAGE_KEY)
+    : null
+
+  async function removeLineItem(lineItemID){
+    const newCheckout = await client.checkout.removeLineItems(checkoutId, [lineItemID])
     dispatch({ type: "UPDATE_CHECKOUT", checkout: newCheckout })
   }
 
   return removeLineItem
 }
 
-export { CartContext, CartContextProvider, useAddItemToCart, useGoToCheckout }
+export { CartContext, CartContextProvider, useAddItemToCart, useGoToCheckout, useRemoveLineItems }
