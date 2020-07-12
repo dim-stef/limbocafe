@@ -76,7 +76,7 @@ function NavigationBar({ children }) {
         </Link>
       </div>
       {isMobile?<MobileNavigation/>:
-      <div style={{ display: "flex", zIndex: 2, color:isDocked?'white !important':'black !important' }}>
+      <div style={{ display: "flex", zIndex: 2, color:isDocked?'white !important':'black !important',alignItems:'center' }}>
         <div className="navlink-wrapper">
           <Link className="navigation-item navlink" to="/products">Products</Link>
         </div>
