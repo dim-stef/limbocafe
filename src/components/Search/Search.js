@@ -1,7 +1,7 @@
 import React from "react";
 import BigBackgroundImage from "../BigBackgroundImage/BigBackgroundImage";
 import Search from "../Svg/Search";
-import BackgroundImage from "../../images/coffeebeans2.jpg"
+import BackgroundImage from "../../images/coffeebeans2-min.jpg"
 import "./Search.css";
 
 function SearchPage() {

@@ -1,21 +1,42 @@
-import React, {useState, useRef, useEffect} from "react";
+import React, {useState, useRef, useEffect, useLayoutEffect} from "react";
 import ReactDOM from "react-dom";
 import { Link } from "gatsby"
 import { useMediaQuery } from 'react-responsive'
 import Cart from "../../icons/Cart";
 import Menu from "../../icons/Menu";
+import Close from "../../icons/Close";
 import Logo from "../../images/logo.png"
 import "./NavigationBar.css";
 
 function NavigationBar({ children }) {
   const url = typeof window !== 'undefined' ? window.location.pathname : '';
+  const ref = useRef(null);
+  const [isDocked, setDocked] = useState(url=='/cart'?false:true);
 
   const isMobile = useMediaQuery({
     query: '(max-width: 767px)'
   })
 
+  function handleScroll(e){
+    if(window.scrollY > 0){
+      setDocked(false);
+    }else{
+      if(url!='/cart'){
+        setDocked(true);
+      }
+    }
+  }
+
+  useEffect(()=>{
+    window.addEventListener('scroll',handleScroll);
+
+    return ()=>{
+      window.removeEventListener('scroll',handleScroll)
+    }
+  },[])
   return (
     <div
+      ref={ref}
       style={{
         position: "fixed",
         top: 0,
@@ -24,7 +45,7 @@ function NavigationBar({ children }) {
         display: "flex",
       }}
     >
-      <div className="navbar-background"></div>
+      <div className="navbar-background" style={{opacity:isDocked?0:1, height:'100%'}}></div>
       <div
         style={{
           display: "flex",
@@ -49,14 +70,13 @@ function NavigationBar({ children }) {
           ></img>
           <p
             className="company-name"
-            style={{color:url=='/cart'?'black':'white'}}
           >
             Limbocafe
           </p>
         </Link>
       </div>
       {isMobile?<MobileNavigation/>:
-      <div style={{ display: "flex", zIndex: 2 }}>
+      <div style={{ display: "flex", zIndex: 2, color:isDocked?'white !important':'black !important' }}>
         <div className="navlink-wrapper">
           <Link className="navigation-item navlink" to="/products">Products</Link>
         </div>
@@ -80,7 +100,6 @@ function MobileNavigation(){
   const [open,setOpen] = useState(false);
 
   function handleClick(){
-    console.log("in")
     setOpen(true);
   }
 
@@ -103,6 +122,11 @@ function MobileMenu({open, setOpen}){
     }
   }
 
+  function handleClose(e){
+    e.stopPropagation();
+    setOpen(false);
+  }
+
   useEffect(()=>{
     window.addEventListener('click', onOutSideClick);
     return () =>{
@@ -115,8 +139,12 @@ function MobileMenu({open, setOpen}){
       <div style={{width:'70%',height:'100%',backgroundColor:'white',
       zIndex:1000000,position:'absolute',right:0, display:'flex',
       flexFlow:'column',padding:'40px 20px',boxSizing:'border-box'}} ref={ref}>
+        <div style={{position:'absolute',top:0,right:0,display:'flex',padding:20}} 
+        onClick={handleClose}>
+          <Close style={{height:25}}/>
+        </div>
         <div style={{ display:'flex',
-        flexFlow:'column',}}>
+        flexFlow:'column',marginTop:40}}>
             <MobileLink to="/products">Products</MobileLink>
             <MobileLink to="/about">About</MobileLink>
             <MobileLink to="/contact">Contact</MobileLink>

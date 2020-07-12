@@ -2,7 +2,7 @@ import React, { useState, useEffect } from "react";
 import "./Home.css";
 import BestProductCard from "../BestProductCard/BestProductCard";
 import BigBackgroundImage from "../BigBackgroundImage/BigBackgroundImage";
-import BackgroundImage from "../../images/coffee-beans.jpg"
+import BackgroundImage from "../../images/coffee-beans-min.jpg"
 
 function Home({data}) {
   const [meta, setMeta] = useState({});
@@ -44,14 +44,14 @@ function Home({data}) {
           display: "flex",
           flexFlow: "row wrap",
           justifyContent: "center",
-          marginTop: -30,
+          marginTop: -50,
         }}
       >
         {data.allShopifyProduct.edges.length > 0 ? (
           <>
-            <BestProductCard product={data.allShopifyProduct.edges[0].node} />
-            <BestProductCard product={data.allShopifyProduct.edges[1].node} />
-            <BestProductCard product={data.allShopifyProduct.edges[2].node} />
+            {data.allShopifyProduct.edges[0]?<BestProductCard product={data.allShopifyProduct.edges[0].node} />:null}
+            {data.allShopifyProduct.edges[1]?<BestProductCard product={data.allShopifyProduct.edges[1].node} />:null}
+            {data.allShopifyProduct.edges[2]?<BestProductCard product={data.allShopifyProduct.edges[2].node} />:null}
           </>
         ) : null}
       </div>

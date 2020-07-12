@@ -5,7 +5,7 @@ import BigBackgroundImage from "../BigBackgroundImage/BigBackgroundImage";
 import FadeImage from "../FadeImage/FadeImage";
 import DefaultLayout from "../../layouts/index";
 import { useAddItemToCart } from "../../contexts/CartContext";
-import BackgroundImage from "../../images/coffee-product-page.jpg"
+import BackgroundImage from "../../images/coffee-product-page-min.jpg"
 import { toast } from 'react-toastify';
 import "./Product.css";
 
@@ -44,11 +44,10 @@ function Product({pageContext}) {
   const addItemToCart = useAddItemToCart()
 
   function handleAddToCart(variant) {
-    console.log("in")
     toast(
       <AddNotification product={variant}/>, {
       position: "top-right",
-      autoClose: 500000,
+      autoClose: 5000,
       hideProgressBar: false,
       closeOnClick: true,
       pauseOnHover: true,
@@ -61,7 +60,6 @@ function Product({pageContext}) {
   function createMarkup(html) {
     return {__html: html};
   }
-  console.log(product.variants[0])
   return (
     <DefaultLayout>
       <div>

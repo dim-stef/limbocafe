@@ -1,13 +1,15 @@
 import React, {useState} from "react";
-import { Link, graphql } from "gatsby"
+import { Link, graphql } from "gatsby";
+import {navigate} from "@reach/router";
+import ReactPaginate from 'react-paginate';
 import Home from "../Home/Home";
 import DefaultLayout from "../../layouts"
 import BigBackgroundImage from "../BigBackgroundImage/BigBackgroundImage";
-import BackgroundImage from "../../images/coffee-products-page.jpg"
+import BackgroundImage from "../../images/coffee-products-page-min.jpg"
 import "./ProductsPage.css"
 
-const ProductsPage = ({ data }) => {
-  console.log(data);
+const ProductsPage = ({ data,pageContext }) => {
+  console.log(data,pageContext);
 
   return(
     <DefaultLayout>
@@ -30,7 +32,44 @@ const ProductsPage = ({ data }) => {
           )
         })}
       </div>
+      <PageNumbers pageContext={pageContext}/>
     </DefaultLayout>
+  )
+}
+
+function PageNumbers({pageContext}){
+
+  let maxVisiblePageCount = 10;
+
+  function handleNavigateTo(page){
+    if(page.selected == 0){
+      navigate(`/products`)
+    }else {
+      navigate(`/products/${page.selected + 1}`)
+    }
+    
+  }
+
+  return(
+    <div className="page-numbers-wrapper">
+      <ReactPaginate
+          forcePage={pageContext.currentPage - 1}
+          pageClassName={'pageItem'}
+          previousLabel={'previous'}
+          nextLabel={'next'}
+          breakLabel={'...'}
+          breakClassName={'break-me'}
+          pageCount={pageContext.numPages}
+          marginPagesDisplayed={2}
+          pageRangeDisplayed={5}
+          onPageChange={handleNavigateTo}
+          containerClassName={'pagination'}
+          subContainerClassName={'pages pagination'}
+          activeClassName={'activeClassName'}
+          previousClassName={'previous-next-buttons'}
+          nextClassName={'previous-next-buttons'}
+        />
+    </div>
   )
 }
 

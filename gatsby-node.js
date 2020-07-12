@@ -68,7 +68,7 @@ exports.createPages = async ({ graphql, actions, reporter }) => {
   // ...
   // Create blog-list pages
   const posts = result.data.allShopifyProduct.totalCount
-  const postsPerPage = 20
+  const postsPerPage = 15
   const numPages = Math.ceil(posts / postsPerPage)
   Array.from({ length: numPages }).forEach((_, i) => {
     createPage({

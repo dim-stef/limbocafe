@@ -20,6 +20,7 @@
     "gatsby-source-shopify": "3.2.11",
     "react": "16.13.1",
     "react-dom": "16.13.1",
+    "react-paginate": "^6.3.2",
     "react-responsive": "^8.1.0",
     "react-responsive-carousel": "^3.2.9",
     "react-spring": "^8.0.27",

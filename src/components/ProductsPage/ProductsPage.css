@@ -18,3 +18,56 @@
   0 17.5px 24.2px -18px rgba(0, 0, 0, 0.05),
   0 42px 58px -18px rgba(0, 0, 0, 0.07);
 }
+
+.page-numbers-wrapper{
+  width: 50%;
+  display: flex;
+  flex-flow: row;
+  margin: 0 auto;
+}
+
+.page-button{
+  padding: 5px;
+  width: 35px;
+  height: 35px;
+  margin: 5px;
+}
+
+.activeClassName{
+  border:0;
+  color: white;
+  background-color: #2d2d2d;
+}
+
+.pagination{
+  padding: 0;
+  margin: 0;
+  display: flex;
+  flex-flow: row wrap;
+  list-style: none;
+  justify-content: center;
+}
+
+.pageItem{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 5px;
+  width: 35px;
+  height: 35px;
+  margin: 5px;
+  border: 1px solid #e8e8e8;
+  cursor: pointer;
+}
+
+.previous-next-buttons{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 5px 20px;
+  width: auto;
+  height: 35px;
+  margin: 5px;
+  border: 1px solid #e8e8e8;
+  cursor: pointer;
+}
