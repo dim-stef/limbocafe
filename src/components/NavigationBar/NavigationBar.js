@@ -73,7 +73,7 @@ function NavigationBar({ children }) {
             alt="coffee beans"
             className="logo-img"
           ></img>*/}
-          <LogoSvg className="logo-img" style={{marginRight:0}}/>
+          <LogoSvg className="logo-img" style={{marginRight:0,fill:'white'}}/>
           <p
             className="company-name"
           >
@@ -114,11 +114,12 @@ function MobileNavigation(){
     setOpen(true);
   }
 
+  let root = typeof document !== `undefined` ? document.createElement('mobile-navigation-root') : null
   return(
     <div style={{display:'flex',justifyContent:'center',alignItems:'center',cursor:'pointer',zIndex:2}} 
     onClick={handleClick}>
       <Menu style={{fill:'white',height:30,margin:'0 20px'}}/>
-      {open?
+      {open && root?
         ReactDOM.createPortal(<MobileMenu open={open} setOpen={setOpen}/>, document.getElementById('mobile-navigation-root')):null}
     </div>
   )

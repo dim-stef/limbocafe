@@ -14,9 +14,10 @@ function Feedback({open,setOpen}){
     leave: { opacity: 0, transform: 'scale(0.9) translateY(20px)' },
     config: {duration:200}
   })
+  let root = typeof document !== `undefined` ? document.createElement('modal-root') : null
 
   function onOutSideClick(e){
-    if(ref.current && e.target != ref.current && !ref.current.contains(e.target)
+    if(root && ref.current && e.target != ref.current && !ref.current.contains(e.target)
       && !document.getElementById('feedback-button').contains(e.target)){
       console.log(e.target);
       setOpen(false);
@@ -44,7 +45,10 @@ function Feedback({open,setOpen}){
   useEffect(()=>{
     console.log(body)
   },[body])
-  return ReactDOM.createPortal(
+
+  
+  return (
+    root && ReactDOM.createPortal(
       transitions((style, item, t, i) =>
         item && (
         <div style={{position:'fixed',top:0,right:0,width:'100vw',height:'100%',display:'flex',justifyContent:'center',
@@ -65,6 +69,7 @@ function Feedback({open,setOpen}){
       )
       ,document.getElementById('modal-root')
     )
+  ) 
 }
 
 export default Feedback;
