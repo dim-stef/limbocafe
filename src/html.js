@@ -29,6 +29,7 @@ export default function HTML(props) {
         />
         {props.postBodyComponents}
         <div id="mobile-navigation-root"></div>
+        <div id="modal-root"></div>
       </body>
     </html>
   )

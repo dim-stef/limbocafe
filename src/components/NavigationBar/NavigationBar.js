@@ -2,8 +2,10 @@ import React, {useState, useRef, useEffect, useLayoutEffect} from "react";
 import ReactDOM from "react-dom";
 import { Link } from "gatsby"
 import { useMediaQuery } from 'react-responsive'
+import Feedback from "../Feedback/Feedback";
 import Cart from "../../icons/Cart";
 import Menu from "../../icons/Menu";
+import LogoSvg from "../../icons/Logo";
 import Close from "../../icons/Close";
 import Logo from "../../images/logo.png"
 import "./NavigationBar.css";
@@ -11,6 +13,7 @@ import "./NavigationBar.css";
 function NavigationBar({ children }) {
   const url = typeof window !== 'undefined' ? window.location.pathname : '';
   const ref = useRef(null);
+  const [feedbackOpen,setOpen] = useState(false);
   const [isDocked, setDocked] = useState(url=='/cart'?false:true);
 
   const isMobile = useMediaQuery({
@@ -35,6 +38,8 @@ function NavigationBar({ children }) {
     }
   },[])
   return (
+    <>
+    <Feedback open={feedbackOpen} setOpen={setOpen}/>
     <div
       ref={ref}
       style={{
@@ -63,11 +68,12 @@ function NavigationBar({ children }) {
             textDecoration: "none",
           }}
         >
-          <img
+          {/*<img
             src={Logo}
             alt="coffee beans"
             className="logo-img"
-          ></img>
+          ></img>*/}
+          <LogoSvg className="logo-img" style={{marginRight:0}}/>
           <p
             className="company-name"
           >
@@ -77,6 +83,10 @@ function NavigationBar({ children }) {
       </div>
       {isMobile?<MobileNavigation/>:
       <div style={{ display: "flex", zIndex: 2, color:isDocked?'white !important':'black !important',alignItems:'center' }}>
+        <div className="navlink-wrapper" id="feedback-button">
+          <span className="navigation-item navlink" 
+          onClick={()=>setOpen(true)}>Rate us</span>
+        </div>
         <div className="navlink-wrapper">
           <Link className="navigation-item navlink" to="/products">Products</Link>
         </div>
@@ -92,6 +102,7 @@ function NavigationBar({ children }) {
       </div>}
       
     </div>
+    </>
   );
 }
 
