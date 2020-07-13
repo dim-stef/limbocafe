@@ -8,11 +8,11 @@ import { ToastContainer } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 import "./index.css"
 
-const DefaultLayout = ({ children }) => {
+const DefaultLayout = ({ dockNavigation=true,children }) => {
   return (
     <>
       <ToastContainer/>
-      <NavigationBar />
+      <NavigationBar dockNavigation={dockNavigation}/>
       {children}
       <footer style={{width:'100%',display:'flex', justifyContent:'space-evenly', flexFlow:'row wrap',padding:'35px 0',
       backgroundColor:'rgb(247, 247, 247)', borderTop:'1px solid rgb(232, 232, 232)'}}>

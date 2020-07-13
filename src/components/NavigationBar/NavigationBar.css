@@ -46,6 +46,34 @@
   color: rgb(255, 255, 255);
 }
 
+.mobile-drawer{
+  will-change: transform;
+  width: 70%;
+  height: 100%;
+  background-color: white;
+  z-index: 1000000;
+  position: absolute;
+  right: 0px;
+  display: flex;
+  flex-flow: column;
+  padding: 40px 20px;
+  box-sizing: border-box;
+  transform: translateX(0px);
+  box-shadow: 0 2.8px 2.2px rgba(0, 0, 0, 0.02), 0 6.7px 5.3px rgba(0, 0, 0, 0.028), 0 12.5px 10px rgba(0, 0, 0, 0.035), 0 22.3px 17.9px rgba(0, 0, 0, 0.042), 0 41.8px 33.4px rgba(0, 0, 0, 0.05), 0 100px 80px rgba(0, 0, 0, 0.07);
+}
+
+.cart-size-box{
+  height: 20px;
+  width: 20px;
+  position: absolute;
+  top: -10px;
+  right: -5px;
+  background-color: rgb(3, 169, 244);
+  border-radius: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
 @media all and (max-width:767px){
   .logo-img{
     width: 35px;

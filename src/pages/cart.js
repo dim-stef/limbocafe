@@ -28,7 +28,7 @@ const Cart = () => {
   const goToCheckout = useGoToCheckout();
   const removeLineItems = useRemoveLineItems();
   return (
-    <DefaultLayout>
+    <DefaultLayout dockNavigation={false}>
       <div style={{
         width: '100%', display: 'flex', justifyContent: 'center', marginTop: 100,
       }}

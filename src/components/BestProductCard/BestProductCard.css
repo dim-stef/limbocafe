@@ -1,6 +1,6 @@
 .best-product-card{
   z-index: 2;
-  /*background: #ffb91b;*/
+  position: relative;
   max-width: 260px;
   margin: 0 10px;
   margin-bottom: 10px;
