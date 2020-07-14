@@ -10,6 +10,12 @@ function FadeImage(props) {
     setLoaded(true);
   }
 
+  useEffect(() => {
+    if (ref.current && ref.current.complete) {
+      onImageLoad();
+    }
+  }, [ref]);
+
   return (
     <img
       alt={props.alt}
