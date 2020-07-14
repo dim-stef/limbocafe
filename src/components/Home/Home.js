@@ -8,7 +8,6 @@ function Home({data}) {
   const [meta, setMeta] = useState({});
   const [products, setProducts] = useState([]);
 
-  console.log(data);
   async function getMeta() {
     try {
       let response = await fetch(process.env.REACT_APP_API_URL + "/front-page");
@@ -24,11 +23,6 @@ function Home({data}) {
       setProducts(data);
     } catch (e) {}
   }
-
-  useEffect(() => {
-    //getMeta();
-    //getProducts();
-  }, []);
 
   return (
     <div className="home">

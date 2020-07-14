@@ -7,6 +7,7 @@ import DefaultLayout from "../../layouts/index";
 import { useAddItemToCart } from "../../contexts/CartContext";
 import BackgroundImage from "../../images/coffee-product-page-min.jpg"
 import { toast } from 'react-toastify';
+import {Helmet} from "react-helmet";
 import "./Product.css";
 
 function AddNotification({product}){
@@ -62,6 +63,11 @@ function Product({pageContext}) {
   }
   return (
     <DefaultLayout>
+      <Helmet>
+        <title>Limbocafe - {product.title}</title>
+        <meta name="description" content={product.description} />
+        <link rel="canonical" href={`https://limbocafe.gr/product/${product.handle}`} />
+      </Helmet>
       <div>
         <BigBackgroundImage
           image={BackgroundImage}

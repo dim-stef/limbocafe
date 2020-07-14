@@ -1,5 +1,6 @@
 import React, { useContext } from 'react';
 import DefaultLayout from '../layouts';
+import {Helmet} from "react-helmet";
 import { CartContext, useGoToCheckout, useRemoveLineItems } from '../contexts/CartContext';
 import './cart.css';
 
@@ -29,6 +30,11 @@ const Cart = () => {
   const removeLineItems = useRemoveLineItems();
   return (
     <DefaultLayout dockNavigation={false}>
+      <Helmet>
+        <title>Limbocafe - Cart</title>
+        <meta name="description" content="Checkout the best available coffee in the market" />
+        <link rel="canonical" href="https://limbocafe.gr/cart" />
+      </Helmet>
       <div style={{
         width: '100%', display: 'flex', justifyContent: 'center', marginTop: 100,
       }}

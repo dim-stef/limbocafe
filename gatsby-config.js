@@ -6,6 +6,19 @@ require("dotenv").config({
 module.exports = {
   /* Your site config here */
   plugins: [
+    `gatsby-plugin-react-helmet`,
+    {
+      resolve: `gatsby-plugin-manifest`,
+      options: {
+        name: `Limbocafe`,
+        short_name: `Limbocafe`,
+        start_url: `/`,
+        background_color: `#f7f0eb`,
+        theme_color: `#a2466c`,
+        display: `standalone`,
+        icon: `src/images/favicon.png`,
+      },
+    },
     {
       // This plugin lets me access environment variables that
       // aren't prefixed with Gatsby. This allows me to use

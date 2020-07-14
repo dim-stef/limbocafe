@@ -1,6 +1,7 @@
 import React, {useState} from "react";
 import { Link, graphql } from "gatsby";
 import {navigate} from "@reach/router";
+import {Helmet} from "react-helmet";
 import ReactPaginate from 'react-paginate';
 import Home from "../Home/Home";
 import DefaultLayout from "../../layouts"
@@ -9,10 +10,15 @@ import BackgroundImage from "../../images/coffee-products-page-min.jpg"
 import "./ProductsPage.css"
 
 const ProductsPage = ({ data,pageContext }) => {
-  console.log(data,pageContext);
 
   return(
     <DefaultLayout>
+      <Helmet>
+        <title>Limbocafe - Products</title>
+        <meta name="description" content={`Limbocafe products page ${pageContext.currentPage}`} />
+        <link rel="canonical" href={`https://limbocafe.gr/products/${pageContext.currentPage}`} />
+      </Helmet>
+
       <BigBackgroundImage image={BackgroundImage} title="Products"
         description="All the products avaible from Limbocafe at your service"
       />
