@@ -20,13 +20,17 @@ function NavigationBar({ dockNavigation=true,children }) {
   const cartContext = useContext(CartContext);
   const cartSize = cartContext.cart.checkout.lineItems.length;
   const [feedbackOpen, setOpen] = useState(false);
-  const [isDocked, setDocked] = useState(dockNavigation==false?dockNavigation : true);
+  const [defaultDock,] = useState(dockNavigation);
+  const [isDocked, setDocked] = useState(defaultDock);
 
   const isMobile = useMediaQuery({
     query: '(max-width: 767px)',
   });
 
   function handleScroll(e) {
+    if(!defaultDock){
+      return;
+    }
     if (window.scrollY > 0) {
       setDocked(false);
     } else if (url != '/cart') {
