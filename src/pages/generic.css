@@ -1,0 +1,13 @@
+.small-container{
+  display: flex;
+  justify-content: center;
+  flex-flow: column;
+  max-width: 1000px;
+  padding: 100px 30%;
+}
+
+@media all and (max-width:767px){
+  .small-container{
+    padding: 100px 20px;
+  }
+}
