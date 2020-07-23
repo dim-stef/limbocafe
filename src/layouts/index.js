@@ -18,7 +18,7 @@ const DefaultLayout = ({ dockNavigation=true,children }) => {
       backgroundColor:'rgb(247, 247, 247)', borderTop:'1px solid rgb(232, 232, 232)'}}>
         <div style={{display:'flex',justifyContent:'center',alignItems:'center'}}>
           <LogoSvg
-              style={{ objectFit: "cover", width: 50, height: 50, margin: 10, marginRight:0 }}
+              style={{ objectFit: "cover", fill:'#333333', width: 60, height: 60, margin: 10, marginRight:0 }}
             ></LogoSvg>
             <p
               style={{

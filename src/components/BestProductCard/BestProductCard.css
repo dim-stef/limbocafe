@@ -23,6 +23,7 @@
   align-items: center;
   box-sizing: border-box;
   transition: all 0.2s;
+  will-change: transform, filter;
 }
 
 .product-inner-wrapper > p{
