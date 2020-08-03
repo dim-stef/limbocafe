@@ -6,14 +6,14 @@ import "./generic.css";
 const Contact = () => (
   <DefaultLayout dockNavigation={false}>
     <Helmet>
-      <title>Limbocafe - Contact</title>
-      <meta name="description" content="Limbocafe contact information" />
+      <title>Limbocafe - Επικοινωνία</title>
+      <meta name="description" content="Limbocafe στοιχεία επικοινωνίας" />
     </Helmet>
 
     <div className="small-container">
-      <h1>Contact information</h1>
-      <div><b>Phone number 1: </b><span>2109921631</span></div>
-      <div><b>Phone number 2: </b><span>6970179506</span></div>
+      <h1>Στοιχεία επικοινωνίας</h1>
+      <div><b>Τηλέφωνο 1: </b><span>2109921631</span></div>
+      <div><b>Τηλέφωνο 2: </b><span>6970179506</span></div>
       <div><b>Email: </b><span>info@limbocafe.gr</span></div>
 
     </div>

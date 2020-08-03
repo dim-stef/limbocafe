@@ -9,8 +9,8 @@ const HomePage = ({ data }) => (
   <>
   <Helmet>
       <title>Limbocafe</title>
-      <meta name="description" content="Limbocafe is right next to you in every business step you take. 
-      Our renewed and rich portfolio, will cover all your needs." />
+      <meta name="description" content="Η Limbocafe είναι δίπλα σου σε κάθε επιχειρηματικό βήμα που κάνεις. 
+      Η πλούσια συλλογή μας θα καλύψει όλες τις ανάγκες σας." />
       <link rel="canonical" href="https://limbocafe.gr" />
   </Helmet>
   <DefaultLayout>

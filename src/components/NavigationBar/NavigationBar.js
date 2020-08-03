@@ -100,17 +100,17 @@ function NavigationBar({ dockNavigation=true,children }) {
                   className="navigation-item navlink"
                   onClick={() => setOpen(true)}
                 >
-                  Rate us
+                  Βαθμολογήστε μας
                 </span>
               </div>
               <div className="navlink-wrapper">
-                <Link className="navigation-item navlink" to="/products">Products</Link>
+                <Link className="navigation-item navlink" to="/products">Προιόντα</Link>
               </div>
               <div className="navlink-wrapper">
-                <Link className="navigation-item navlink" to="/about">About</Link>
+                <Link className="navigation-item navlink" to="/about">Σχετικά</Link>
               </div>
               <div className="navlink-wrapper">
-                <Link className="navigation-item navlink" to="/contact">Contact</Link>
+                <Link className="navigation-item navlink" to="/contact">Επικοινωνία</Link>
               </div>
               <div className="navlink-wrapper">
                 <Link className="navigation-item navlink" to="/cart">
@@ -219,13 +219,13 @@ function MobileMenu({ open, setOpen, drawerRef, setFeedbackOpen }) {
         marginTop: 40,
       }}
       >
-        <MobileLink to="/products">Products</MobileLink>
-        <MobileLink to="/about">About</MobileLink>
-        <MobileLink to="/contact">Contact</MobileLink>
+        <MobileLink to="/products">Προιόντα</MobileLink>
+        <MobileLink to="/about">Σχετικά</MobileLink>
+        <MobileLink to="/contact">Επικοινωνία</MobileLink>
         <MobileLink to="/faq">FAQ</MobileLink>
         <span id="feedback-button" style={{
           textDecoration: 'none', color: 'black', padding: 10, borderBottom: '1px solid #ececec',
-        }} onClick={()=>setFeedbackOpen(true)}>Rate us</span>
+        }} onClick={()=>setFeedbackOpen(true)}>Βαθμολογήστε μας</span>
       </div>
       <Link
         to="/cart"
@@ -238,7 +238,7 @@ function MobileMenu({ open, setOpen, drawerRef, setFeedbackOpen }) {
         backgroundColor:'rgb(3, 169, 244)'}}>
           <span style={{color:'white',fontSize:'0.7rem'}}>{cartSize}</span>
         </div>
-        <p style={{ marginLeft: 10 }}>View cart</p>
+        <p style={{ marginLeft: 10 }}>Δές το καλάθι</p>
       </Link>
     </>
   );

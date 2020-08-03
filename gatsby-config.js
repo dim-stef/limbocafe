@@ -20,6 +20,13 @@ module.exports = {
       },
     },
     {
+      resolve: 'gatsby-plugin-i18n',
+      options: {        
+        langKeyDefault: 'en',
+        useLangKeyLayout: true
+      } 
+    },
+    {
       // This plugin lets me access environment variables that
       // aren't prefixed with Gatsby. This allows me to use
       // Shopify-related variables in the context setup script.

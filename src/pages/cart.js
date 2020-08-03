@@ -31,15 +31,15 @@ const Cart = () => {
   return (
     <DefaultLayout dockNavigation={false}>
       <Helmet>
-        <title>Limbocafe - Cart</title>
-        <meta name="description" content="Checkout the best available coffee in the market" />
+        <title>Limbocafe - Καλάθι</title>
+        <meta name="description" content="Κάνε checkout την καλύτερη ποιότητα καφέ στην αγορά." />
         <link rel="canonical" href="https://limbocafe.gr/cart" />
       </Helmet>
       <div style={{
         width: '100%', display: 'flex', justifyContent: 'center', marginTop: 100,
       }}
       >
-        <h1>Your cart</h1>
+        <h1>Το καλάθι μου</h1>
       </div>
       <ul
         className="cart-container"
@@ -48,13 +48,13 @@ const Cart = () => {
           display: 'flex', width: '100%', marginBottom: 30, borderBottom: '1px solid #e8e8e8',
         }}
         >
-          <p style={{ flexBasis: '20%', display: 'flex', justifyContent: 'center' }}>Product</p>
+          <p style={{ flexBasis: '20%', display: 'flex', justifyContent: 'center' }}>Προιόν</p>
           <p style={{ flexBasis: '40%' }} />
-          <p style={{ flexGrow: 1, display: 'flex', justifyContent: 'center' }}>Price</p>
+          <p style={{ flexGrow: 1, display: 'flex', justifyContent: 'center' }}>Τιμή</p>
         </div>
         {lineItems.length == 0 ? (
           <div style={{ width: '100%', display: 'flex', justifyContent: 'center' }}>
-            <h2>No items in cart</h2>
+            <h2>Δέν υπάρχουν αντικείμενα στο καλάθι</h2>
           </div>
         ) : null}
         {lineItems.map((item, i) => (
@@ -78,11 +78,11 @@ const Cart = () => {
             <div className="cart-product-wrapper">
               <p className="cart-product-name">{item.title}</p>
               <p className="cart-product-quantity">
-                Quantity:
+                Ποσότητα:
                 {' '}
                 {item.quantity}
               </p>
-              <p style={{ textDecoration: 'underline', cursor: 'pointer' }} onClick={() => removeLineItems(item.id)}>Remove</p>
+              <p style={{ textDecoration: 'underline', cursor: 'pointer' }} onClick={() => removeLineItems(item.id)}>Αφαίρεση</p>
             </div>
             <div style={{
               flexGrow: 1, display: 'flex', flexFlow: 'column', alignItems: 'center',
@@ -108,9 +108,9 @@ const Cart = () => {
         <div className="gapper-2" />
         <div style={{flexGrow:1, display:'flex',justifyContent:'center',flexFlow:'column',alignItems:'center'}}>
           <p style={{ fontWeight: 300 }}>
-            Subtotal: {getTotalAmount()}
+            Υπόλοιπο: {getTotalAmount()}
           </p>
-          <button className="checkout-button" onClick={goToCheckout}>Go To Checkout</button>
+          <button className="checkout-button" onClick={goToCheckout}>Ολοκλήρωση παραγγελίας</button>
         </div>
       </div>:null}
       

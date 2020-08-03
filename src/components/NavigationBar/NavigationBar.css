@@ -1,5 +1,7 @@
 .navigation-item{
-  font-family: 'Fredoka One', cursive;
+  /*font-family: 'Fredoka One', cursive;*/
+  font-family: 'Poppins', sans-serif;
+  font-weight: bold;
 }
 
 .navbar-background{

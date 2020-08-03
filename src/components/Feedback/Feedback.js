@@ -65,18 +65,18 @@ function Feedback({ open, setOpen }) {
         }}
         >
           <animated.div key={i} style={style} ref={ref} className="feedback-container">
-            <h1 style={{ margin: '0px 20px 20px 20px', fontSize: '1.7rem' }}>Rate us!</h1>
+            <h1 style={{ margin: '0px 20px 20px 20px', fontSize: '1.7rem' }}>Βαθμολογήστε μας!</h1>
             <div style={{ display: 'flex', flexFlow: 'row', justifyContent: 'space-evenly' }}>
               {[...Array(5)].map((item, i) => <Star style={{ width: '10%', fill: stars < i ? '#dedede' : 'yellow' }} key={i} onClick={() => handleStarClick(i)} />)}
             </div>
             <textarea
-              placeholder="How was your experience using limbocafe?"
+              placeholder="Πώς ηταν η εμπειρία σας στο limbocafe?"
               onChange={(e) => setBody(e.target.value)}
               style={{
                 margin: 20, flexGrow: 1, fontSize: '1rem', padding: 20, borderRadius: 10,
               }}
             />
-            <button className="feedback-submit-button">Submit</button>
+            <button className="feedback-submit-button">Στείλε την βαθμολογία</button>
           </animated.div>
         </div>
       )),

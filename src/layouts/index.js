@@ -32,9 +32,9 @@ const DefaultLayout = ({ dockNavigation=true,children }) => {
           </p>
         </div>
         <div style={{display:'flex', flexFlow:'column'}}>
-          <h2 style={{color:'#333333'}}>Quick links</h2>
-          <Link to="/about" className="footer-link">About</Link>
-          <Link to="/contact" className="footer-link">Contact</Link>
+          <h2 style={{color:'#333333'}}>Γρήγορα links</h2>
+          <Link to="/about" className="footer-link">Σχετικά</Link>
+          <Link to="/contact" className="footer-link">Επικοινωνία</Link>
           <Link to="/faq" className="footer-link">FAQ</Link>
         </div>
       </footer>

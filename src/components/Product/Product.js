@@ -18,7 +18,7 @@ function AddNotification({product}){
   
   return(
     <div style={{color:'#3a3a3a'}}>
-      <p style={{borderBottom:'1px solid #e8e8e8', fontWeight:300}}>JUST ADDED TO CART</p>
+      <p style={{borderBottom:'1px solid #e8e8e8', fontWeight:300}}>ΜΟΛΙΣ ΜΠΗΚΕ ΣΤΟ ΚΑΛΑΘΙ</p>
       <div style={{display:'flex',flexFlow:'row wrap'}}>
         <div style={{flexBasis:'30%'}}>
           <FadeImage
@@ -30,7 +30,7 @@ function AddNotification({product}){
         <p style={{flexBasis:'50%', margin:'0 10px'}}>{product.title}</p>
       </div>
       <div style={{display:'flex',justifyContent:'center'}}>
-        <button className="view-cart-button" onClick={handleClick}>View cart</button>
+        <button className="view-cart-button" onClick={handleClick}>Δές το καλάθι</button>
       </div>
       
     </div>
@@ -94,7 +94,7 @@ function Product({pageContext}) {
                     {product.priceRange.minVariantPrice.amount}$
                   </p>
                   <button className="add-to-cart-button" 
-                  onClick={()=>{handleAddToCart(product)}}>Add to cart</button>
+                  onClick={()=>{handleAddToCart(product)}}>Βάλτο στο καλάθι</button>
                 </div>
               </div>
             </div>

@@ -10,7 +10,7 @@ const ProductTemplate = ({ pageContext }) => {
       {/* Follow the structure of the GraphQL query in gatsby-node.js */}
       <h1>{product.title}</h1>
       <p>
-        Description:{" "}
+        Περιγραφή:{" "}
         <span dangerouslySetInnerHTML={{ __html: product.descriptionHtml }} />
       </p>
       <div style={{ display: "flex", justifyContent: "space-around" }}>

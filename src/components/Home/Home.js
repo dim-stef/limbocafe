@@ -24,11 +24,12 @@ function Home({data}) {
     } catch (e) {}
   }
 
+  //Limbocafe is right next to you in every business step you take. Our renewed and rich portfolio, will cover all your needs.
   return (
     <div className="home">
       <BigBackgroundImage
-        title="Quality coffee"
-        description="Limbocafe is right next to you in every business step you take. Our renewed and rich portfolio, will cover all your needs."
+        title="Καφές ποιότητας"
+        description="Η Limbocafe είναι δίπλα σου σε κάθε επιχειρηματικό βήμα που κάνεις. Η πλούσια συλλογή μας θα καλύψει όλες τις ανάγκες σας."
         image={BackgroundImage}
       />
 

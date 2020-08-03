@@ -22,7 +22,7 @@ function BestProductCard({ product }) {
       <div style={{position:'absolute',top:0,right:0,height:'100%',zIndex:100,
       width:'100%',display:'flex',justifyContent:'center',alignItems:'center'}}>
         <div style={{padding:'0 20px',borderRadius:100,backgroundColor:'#ffffff91'}}>
-          <p>View item</p>
+          <p>Δές το</p>
         </div>
       </div>:
       null}

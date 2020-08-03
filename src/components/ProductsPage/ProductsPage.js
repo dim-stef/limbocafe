@@ -11,16 +11,17 @@ import "./ProductsPage.css"
 
 const ProductsPage = ({ data,pageContext }) => {
 
+  //All the products avaible from Limbocafe at your service
   return(
     <DefaultLayout>
       <Helmet>
-        <title>Limbocafe - Products</title>
+        <title>Limbocafe - Προιόντα</title>
         <meta name="description" content={`Limbocafe products page ${pageContext.currentPage}`} />
         <link rel="canonical" href={`https://limbocafe.gr/products/${pageContext.currentPage}`} />
       </Helmet>
 
       <BigBackgroundImage image={BackgroundImage} title="Products"
-        description="All the products avaible from Limbocafe at your service"
+        description="Όλα τα προιόντα της Limbocafe στη διάθεσή σας"
       />
       <div style={{display:'flex',flexFlow:'row wrap',width:'100%', 
       justifyContent:'space-evenly',margin:'10px 0',padding:20,boxSizing:'border-box',cursor:'pointer'}}>
@@ -61,8 +62,8 @@ function PageNumbers({pageContext}){
       <ReactPaginate
           forcePage={pageContext.currentPage - 1}
           pageClassName={'pageItem'}
-          previousLabel={'previous'}
-          nextLabel={'next'}
+          previousLabel={'προηγούμενο'}
+          nextLabel={'επόμενο'}
           breakLabel={'...'}
           breakClassName={'break-me'}
           pageCount={pageContext.numPages}
