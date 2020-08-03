@@ -20,7 +20,7 @@ const ProductsPage = ({ data,pageContext }) => {
         <link rel="canonical" href={`https://limbocafe.gr/products/${pageContext.currentPage}`} />
       </Helmet>
 
-      <BigBackgroundImage image={BackgroundImage} title="Products"
+      <BigBackgroundImage image={BackgroundImage} title="Προιόντα"
         description="Όλα τα προιόντα της Limbocafe στη διάθεσή σας"
       />
       <div style={{display:'flex',flexFlow:'row wrap',width:'100%', 
