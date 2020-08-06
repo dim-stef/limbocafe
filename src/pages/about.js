@@ -1,13 +1,16 @@
 import React from "react";
 import {Helmet} from "react-helmet";
+import FadeImage from '../components/FadeImage/FadeImage';
 import DefaultLayout from "../layouts";
+import Mulos from '../images/mulos-min.png';
+import Roaster from '../images/roaster-min.png';
 import "./generic.css";
 
 const Contact = () => {
   let text = `We are Limbocafe, a company which aims to deliver excellent quality coffee. We import and roast our coffee here in greece.
   After a certain threshold we also offer accounting, legal and insurance services.`
   text = `Είμαστε η Limbocafe, μια εταιρεία που στοχεύει την παραγωγή καφέ άριστης ποιότητας. Εισάγουμε και καβουρδίζουμε τον καφέ εδώ
-  στην Ελλάδα. Μετά απο ένα όριο προσφέρουμε λογιστικές, νομικές και ασφαλιστηκές υπηρεσίες.`
+  στην Ελλάδα.`
   return(
     <DefaultLayout dockNavigation={false}>
       <Helmet>
@@ -17,7 +20,24 @@ const Contact = () => {
 
       <div className="small-container">
         <h1>Σχετικά με εμάς</h1>
-        {text}
+        <p style={{marginTop:0}}>{text}</p>
+        <p style={{margin:0}}>Μετά το όριο των 100 παραγγελιών παρέχουμε επισης:</p>
+        <ul>
+          <li>Λογιστικές υπηρεσίες</li>
+          <li>Νομικές υπηρεσίες</li>
+          <li>Ασφαλιστηκές υπηρεσίες</li>
+        </ul>
+        <h1>Η παραγωγή μας</h1>
+        <p style={{marginTop:0}}>Με τις εξής μηχανές επεξεργαζόμαστε τον καφέ μας ώστε να παρέχουμε 
+        την καλύτερη δυνατή ποιότητα καφέ στους πελάτες μας</p>
+        <div style={{display:'flex',justifyContent:'center',alignItems:'center',flexFlow:'column'}}>
+          <FadeImage src={Mulos} style={{width:'100%',objectFit:'cover'}}/>
+          <p style={{color:'#737373',marginBottom:25,marginTop:15}}>Μύλος για άλεση του καφέ</p>
+        </div>
+        <div style={{display:'flex',justifyContent:'center',alignItems:'center',flexFlow:'column'}}>
+          <FadeImage src={Roaster} style={{width:'100%',objectFit:'cover'}}/>
+          <p style={{color:'#737373',marginBottom:25,marginTop:15}}>Καβουρδιστήρι</p>
+        </div>
       </div>
     </DefaultLayout>
   )
