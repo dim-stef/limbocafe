@@ -113,6 +113,9 @@ function NavigationBar({ dockNavigation=true,children }) {
                 <Link className="navigation-item navlink" to="/contact">Επικοινωνία</Link>
               </div>
               <div className="navlink-wrapper">
+                <Link className="navigation-item navlink" to="/faq">FAQ</Link>
+              </div>
+              <div className="navlink-wrapper">
                 <Link className="navigation-item navlink" to="/cart">
                   <div style={{position:'relative'}}>
                     <Cart style={{ fill: 'white' }} />
